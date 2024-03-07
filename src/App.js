@@ -8,6 +8,7 @@ function App() {
         <div>
           <BrowserRouter>
             <Routes>
+              <Route path="/portfolio/" element={<Home />}/>
               <Route index element={<Home />}/>
             </Routes>
           </BrowserRouter>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { useState } from "react";
 import Profile1 from "../Assets/Profile1.jpg";
 import cp from "../Assets/C_programing.jpg";
@@ -22,13 +22,14 @@ import { FaUserGraduate } from "react-icons/fa6";
 
 export default function Home() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
     return (
       <div >
 <div className="flex items-center justify-between border-b border-gray-400 py-8 ml-4 mr-4">
 <span class="relative inline-flex h-5">
   <span class="animate-ping absolute inline-flex h-full w-5/6 rounded-full bg-sky-400 opacity-75"></span>
   <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
-  <span class=" font-bold text-2xl"><span class="text-sky-900">S</span>anthosh Bharadwaj H A</span>
+  <span class=" font-bold text-2xl" id="top"><span class="text-sky-900">S</span>anthosh Bharadwaj H A</span>
 </span> 
 
       <a href="/">
@@ -65,13 +66,13 @@ export default function Home() {
             </div>
             <ul className="flex flex-col items-center justify-between">
               <li className="border-b border-gray-400 my-8 uppercase font-bold">
-                <a href="/about">About</a>
+                <a href="/">About</a>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase font-bold">
-                <a href="/portfolio">Portfolio</a>
+                <a href="/">Portfolio</a>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase font-bold">
-                <a href="/contact">Contact</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -79,13 +80,13 @@ export default function Home() {
 
         <ul className="DESKTOP-MENU hidden space-x-8 lg:flex font-bold">
           <li>
-            <a href="/about">About</a>
+            <a href="/">About</a>
           </li>
           <li>
-            <a href="/portfolio">Portfolio</a>
+            <a href="/">Portfolio</a>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
@@ -114,7 +115,7 @@ export default function Home() {
                     <h1 className='mt-10 text-5xl font-bold'>Hi,</h1>
                     <h1 className='mt-2 text-5xl font-bold '>I'm <span class="text-red-600">Santhosh</span></h1>
                     <h1 className='mt-2 text-5xl font-bold'>Software developer</h1>
-                    <h2 className='mt-8 text-2xl mr-40 font-semibold'>Full Stack Developer / MERN Stack / DevOps</h2>
+                    <h2 className='mt-8 text-2xl mr-40 font-semibold'>Full Stack Developer / MERN Stack / DevOps / Django </h2>
                 </div>
                 <img src={Profile1} alt="Profile_Image" class="rounded-full h-80 w-80"/>
             </div>
@@ -132,33 +133,6 @@ export default function Home() {
                       `}
                     </style>
             <VerticalTimeline>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#bbf7d0' }}
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2011 - present"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#bbf7d0' }}
-    icon={<FaUserGraduate />}
-  >
-    <h3 className="vertical-timeline-element-title">Creative Director</h3>
-    <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-    <p>
-      Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-    </p>
-  </VerticalTimelineElement>
- 
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="2008 - 2010"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    icon={<FaUserGraduate />}
-  >
-    <h3 className="vertical-timeline-element-title">University of Visvesvaraya College of Engineering</h3>
-    <h4 className="vertical-timeline-element-subtitle">Master of Technology</h4>
-    <p>
-      MTech, Information Technology
-    </p>
-  </VerticalTimelineElement>
   <VerticalTimelineElement
     className="vertical-timeline-element--work"
     date="2017-2021"
@@ -309,6 +283,67 @@ export default function Home() {
 </section>
 
 </div>
+<section class="contact-us" id="contact">
+  <h2>Contact Us</h2>
+  <p>We'd love to hear from you!</p>
+  <ul class="contact-info">
+    <li>
+      <a href="mailto:youremail@example.com" class="contact-link">Email: santhoshbharadwajha@gmail.com</a>
+    </li>
+    <li>
+      <a href="tel:+919449695806" class="contact-link">Phone: +91-9449695806</a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/santhoshbharadwaj-h-a-2b009615b/" class="contact-link">LinkedIn: Santhoshbharadwaj H A</a>
+    </li>
+  </ul>
+  <button class="top-0 -translate-x-1/2 bg-blue-500 text-white font-bold py-2 px-4 ml-24 rounded-md focus:outline-none">
+<a href='#top'>
+  Go to Top
+  </a>
+</button>
+</section>
+
+<style>{`
+  .contact-us {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem auto;
+    text-align: center; /* Center text for better appearance */
+  }
+
+  .contact-us h2 {
+    margin: 0 0 1rem 0; /* Adjust top margin for heading */
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .contact-us p {
+    margin-bottom: 1rem;
+    color: #666; /* Subdued color for intro text */
+  }
+
+  .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-link {
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333; /* Darker color for links */
+    text-decoration: none; /* Remove underline */
+    transition: all 0.2s ease-in-out;
+  }
+
+  .contact-link:hover {
+    background-color: #e0e0e0; /* Subtle hover effect */
+  }
+  `}</style>
+
 </div>
 
 

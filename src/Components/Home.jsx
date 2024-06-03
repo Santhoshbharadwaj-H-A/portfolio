@@ -66,10 +66,10 @@ export default function Home() {
             </div>
             <ul className="flex flex-col items-center justify-between">
               <li className="border-b border-gray-400 my-8 uppercase font-bold">
-                <a href="/">About</a>
+                <a href="https://santhoshbharadwaj-h-a.github.io/portfolio/">About</a>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase font-bold">
-                <a href="/">Portfolio</a>
+                <a href="https://santhoshbharadwaj-h-a.github.io/portfolio/">Portfolio</a>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase font-bold">
                 <a href="#contact">Contact</a>
@@ -80,10 +80,10 @@ export default function Home() {
 
         <ul className="DESKTOP-MENU hidden space-x-8 lg:flex font-bold">
           <li>
-            <a href="/">About</a>
+            <a href="https://santhoshbharadwaj-h-a.github.io/portfolio/">About</a>
           </li>
           <li>
-            <a href="/">Portfolio</a>
+            <a href="https://santhoshbharadwaj-h-a.github.io/portfolio/">Portfolio</a>
           </li>
           <li>
             <a href="#contact">Contact</a>

@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1c096297.css",
-    "main.js": "/portfolio/static/js/main.7749d06b.js",
+    "main.css": "/portfolio/static/css/main.f1f951f7.css",
+    "main.js": "/portfolio/static/js/main.9fa1cbc4.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
+    "static/media/profile_photo.jpg": "/portfolio/static/media/profile_photo.551cf4209daaddf5cdb2.jpg",
     "static/media/Scientific_Computing_with_python.JPG": "/portfolio/static/media/Scientific_Computing_with_python.77d5ac4819cf3348b031.JPG",
     "static/media/JS_DSA.JPG": "/portfolio/static/media/JS_DSA.81610756b9a0fd2d28d7.JPG",
     "static/media/Data_analysis_with_python.JPG": "/portfolio/static/media/Data_analysis_with_python.0b9068914669551050e8.JPG",
@@ -14,18 +15,19 @@
     "static/media/Topoloogical_data_analysis.JPG": "/portfolio/static/media/Topoloogical_data_analysis.8260942c2086d249caa5.JPG",
     "static/media/C_programing.jpg": "/portfolio/static/media/C_programing.9ff421ae48c1854ea872.jpg",
     "static/media/python_for_datascience.JPG": "/portfolio/static/media/python_for_datascience.8f3c4b59780fc634cde6.JPG",
+    "static/media/resume.pdf": "/portfolio/static/media/resume.522e6ad9e56790f6e724.pdf",
     "static/media/Data_Science_for_engineers.JPG": "/portfolio/static/media/Data_Science_for_engineers.7a740c71f3c3bc6493fb.JPG",
     "static/media/nodejs_certification.JPG": "/portfolio/static/media/nodejs_certification.1649fd71fc8ba7a1940d.JPG",
     "static/media/python_programing.JPG": "/portfolio/static/media/python_programing.bc50d619ac269d2ca009.JPG",
     "static/media/math_for_programmer_scalar.JPG": "/portfolio/static/media/math_for_programmer_scalar.55d30e015536793cf892.JPG",
     "static/media/Profile1.jpg": "/portfolio/static/media/Profile1.1b2ee3a023c9b20d8eca.jpg",
     "index.html": "/portfolio/index.html",
-    "main.1c096297.css.map": "/portfolio/static/css/main.1c096297.css.map",
-    "main.7749d06b.js.map": "/portfolio/static/js/main.7749d06b.js.map",
+    "main.f1f951f7.css.map": "/portfolio/static/css/main.f1f951f7.css.map",
+    "main.9fa1cbc4.js.map": "/portfolio/static/js/main.9fa1cbc4.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c096297.css",
-    "static/js/main.7749d06b.js"
+    "static/css/main.f1f951f7.css",
+    "static/js/main.9fa1cbc4.js"
   ]
 }

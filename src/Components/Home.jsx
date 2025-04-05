@@ -42,16 +42,16 @@ const Home = () => {
   const workExperience = [
     {
       company: "Mediliez Innovations Pvt Limited",
-      position: "Data Engineer",
-      date: "2023 - Present",
+      position: "Software Engineer",
+      date: "2024 - Present",
       description: [
        
       ]
     },
     {
-      company: "Santrotech Software Technologies",
+      company: "SMS Tech Soft",
       position: "Data Engineer",
-      date: "2021 - 2023",
+      date: "2021 - 2024",
       description: [
         
       ]

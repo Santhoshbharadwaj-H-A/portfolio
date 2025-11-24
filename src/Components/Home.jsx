@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { Briefcase, GraduationCap, ChevronUp, Menu, X, Code, ExternalLink, Mail, Phone, Linkedin, Globe, Github } from 'lucide-react';
 import resume from "../Assets/resume.pdf";
 import Profile_Image from "../Assets/profile_photo.jpg";
-import Profile1 from "../Assets/Profile1.jpg";
+// import Profile1 from "../Assets/Profile1.jpg";
 import cp from "../Assets/C_programing.jpg";
 import algebra from "../Assets/college_algebra_with_python.JPG";
 import analysis from "../Assets/Data_analysis_with_python.JPG";
@@ -41,9 +41,17 @@ const Home = () => {
 
   const workExperience = [
     {
+      company: "Prodapt Solutions Pvt. Ltd.",
+      position: "Senior Software Engineer",
+      date: "2025 - Present",
+      description: [
+       
+      ]
+    },
+    {
       company: "Mediliez Innovations Pvt Limited",
       position: "Software Engineer",
-      date: "2024 - Present",
+      date: "2024 - 2025",
       description: [
        
       ]
@@ -100,19 +108,92 @@ const TimelineElement = ({ date, title, subtitle, children, icon: Icon }) => (
   </div>
 );
 
+// // ProjectCard Component
+// const ProjectCard = ({ title, description, technologies, liveLink, githubLink }) => (
+//   <div className="bg-white rounded-lg shadow-md p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
+//     <h3 className="text-xl font-bold mb-3">{title}</h3>
+//     <p className="text-gray-600 mb-4">{description}</p>
+//     <div className="flex flex-wrap gap-2 mb-4">
+//       {technologies.map((tech, index) => (
+//         <span key={index} className="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">
+//           {tech}
+//         </span>
+//       ))}
+//     </div>
+//     <div className="flex space-x-4">
+//       {liveLink && (
+//         <a href={liveLink} className="flex items-center text-sky-600 hover:text-sky-800">
+//           <Globe size={16} className="mr-1" /> Live Demo
+//         </a>
+//       )}
+//       {githubLink && (
+//         <a href={githubLink} className="flex items-center text-gray-600 hover:text-gray-800">
+//           <Github size={16} className="mr-1" /> Code
+//         </a>
+//       )}
+//     </div>
+//   </div>
+// );
+
 // ProjectCard Component
-const ProjectCard = ({ title, description, technologies, liveLink, githubLink }) => (
-  <div className="bg-white rounded-lg shadow-md p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
-    <h3 className="text-xl font-bold mb-3">{title}</h3>
-    <p className="text-gray-600 mb-4">{description}</p>
-    <div className="flex flex-wrap gap-2 mb-4">
-      {technologies.map((tech, index) => (
-        <span key={index} className="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">
-          {tech}
-        </span>
-      ))}
-    </div>
-    <div className="flex space-x-4">
+const ProjectCard = ({ 
+  title, 
+  description, 
+  period, 
+  position, 
+  responsibilities = [], 
+  technicalSkills = [], 
+  liveLink, 
+  githubLink 
+}) => (
+  // <div className="bg-white rounded-lg shadow-md p-6 transition-all hover:-translate-y-1 hover:shadow-lg">
+  <div className="bg-white rounded-lg shadow-md p-6 h-full flex flex-col transition-all hover:-translate-y-1 hover:shadow-lg">
+
+    
+    <h3 className="text-2xl font-bold mb-2">{title}</h3>
+
+    {/* Position & Period */}
+    {position && (
+      <p className="text-sm text-sky-700 font-semibold">{position}</p>
+    )}
+    {period && (
+      <p className="text-sm text-gray-500 mb-3">{period}</p>
+    )}
+
+    {/* Description */}
+    <p className="text-gray-700 mb-4">{description}</p>
+
+    {/* Responsibilities */}
+    {responsibilities.length > 0 && (
+      <div className="mb-4">
+        <h4 className="font-semibold text-gray-800 mb-2">Responsibilities:</h4>
+        <ul className="list-disc pl-5 space-y-1 text-gray-600">
+          {responsibilities.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {/* Technical Skills */}
+    {technicalSkills.length > 0 && (
+      <div className="mb-4">
+        <h4 className="font-semibold text-gray-800 mb-2">Technical Skills:</h4>
+        <div className="flex flex-wrap gap-2">
+          {technicalSkills.map((skill, index) => (
+            <span 
+              key={index} 
+              className="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {/* Links */}
+    <div className="flex space-x-4 mt-4">
       {liveLink && (
         <a href={liveLink} className="flex items-center text-sky-600 hover:text-sky-800">
           <Globe size={16} className="mr-1" /> Live Demo
@@ -149,22 +230,94 @@ const CertificateCard = ({ title, imageUrl, link }) => (
   // Previous data remains the same (workExperience, education)
   // ... (keep existing workExperience and education arrays)
 
+  // const projects = [
+  //   {
+  //     title: "Data Lake Automation with AWS Glue for Sales Optimization",
+  //     description: "Developed an automated data lake solution on AWS using Python and services like S3, Glue, and Redshift. Enabled seamless data ingestion, processing, and querying. The pipeline ingests data from various data sources, performs transformations, and loads the processed data into the Redshift data warehouse for analysis.",
+  //     technologies: ["AWS S3", "AWS Glue", "Redshift", "Python"],
+  //     liveLink: "https://demo-datalake.example.com",
+  //     githubLink: "https://github.com/yourusername/data-lake-automation"
+  //   },
+  //   {
+  //     title: "Customer Transaction Data Pipeline",
+  //     description: "Built a data pipeline to process customer transaction data from various sources. The pipeline ingests data from AWS S3, transforms it using PySpark, and stores the processed data in an AWS RDS (MySQL) database. The data is then used to generate insights and reports for business analysis.",
+  //     technologies: ["AWS S3", "PySpark", "AWS RDS (MySQL)", "ETL"],
+  //     liveLink: "https://demo-transaction-pipeline.example.com",
+  //     githubLink: "https://github.com/yourusername/customer-transaction-pipeline"
+  //   }
+  // ];/
   const projects = [
-    {
-      title: "Data Lake Automation with AWS Glue for Sales Optimization",
-      description: "Developed an automated data lake solution on AWS using Python and services like S3, Glue, and Redshift. Enabled seamless data ingestion, processing, and querying. The pipeline ingests data from various data sources, performs transformations, and loads the processed data into the Redshift data warehouse for analysis.",
-      technologies: ["AWS S3", "AWS Glue", "Redshift", "Python"],
-      liveLink: "https://demo-datalake.example.com",
-      githubLink: "https://github.com/yourusername/data-lake-automation"
-    },
-    {
-      title: "Customer Transaction Data Pipeline",
-      description: "Built a data pipeline to process customer transaction data from various sources. The pipeline ingests data from AWS S3, transforms it using PySpark, and stores the processed data in an AWS RDS (MySQL) database. The data is then used to generate insights and reports for business analysis.",
-      technologies: ["AWS S3", "PySpark", "AWS RDS (MySQL)", "ETL"],
-      liveLink: "https://demo-transaction-pipeline.example.com",
-      githubLink: "https://github.com/yourusername/customer-transaction-pipeline"
-    }
-  ];
+  {
+    "title": "Large-Scale Customer Data Migration (24 Million Customers)",
+    "description": "Led the migration of 18M+ customer records into a unified staging layer and multiple downstream databases. Designed scalable ingestion, transformation, and quality-check pipelines with restart-safe orchestration and full auditability. Ensured accurate, clean, and reliable data movement across PostgreSQL, MySQL, MariaDB, MongoDB, and Oracle.",
+    "period": "April 2025 – Present",
+    "position": "Senior Software Engineer",
+    "responsibilities": [
+      "Designed migration blueprint (staging → transform → target) across PostgreSQL, MySQL, MariaDB, MongoDB, and Oracle",
+      "Implemented high-throughput S3 + PySpark ingestion supporting schema drift and incremental loads",
+      "Built AWS Glue transformations for cleaning, standardizing, and deduping records",
+      "Orchestrated workflows using Glue Workflows, Step Functions, and Lambda for validations & alerts",
+      "Improved observability with CloudWatch dashboards, metrics, tracing, and structured logs",
+      "Developed end-to-end reconciliation checks (Mini Recon & Detailed Recon) with exception buckets",
+      "Implemented rollback scripts with audit logs for safe replays and point-in-time recovery",
+      "Optimized PySpark/Glue performance via partitioning, broadcast joins, and file sizing"
+    ],
+    "technicalSkills": [
+      "Python", "PySpark", "SQL",
+      "AWS S3", "AWS Glue", "Glue Crawlers",
+      "Glue Workflows", "Lambda", "Step Functions",
+      "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Oracle",
+      "Pandas", "Redshift", "Git", "CI/CD"
+    ],
+    "liveLink": "",
+    "githubLink": ""
+  },
+  {
+    "title": "GenAI-Powered Medical Record Review Pipeline",
+    "description": "Built an end-to-end scalable pipeline to process unstructured medical records. Implemented OCR → normalization → GenAI analysis workflow using AWS services and Amazon Bedrock for summarization, entity extraction, and clinical insights. Designed a robust orchestration layer supporting batch and incremental data processing.",
+    "period": "April 2024 – 2025",
+    "position": "Software Engineer",
+    "responsibilities": [
+      "Designed ingestion → OCR → normalization → GenAI analysis architecture on AWS",
+      "Integrated Amazon Textract for OCR and Amazon Bedrock for summarization and entity extraction",
+      "Orchestrated Glue Python Shell jobs and Lambda triggers with Step Functions for scalable processing",
+      "Implemented cleaning and normalization workflows using Pandas with strict schema validation",
+      "Wrote structured data outputs to S3 (CSV/Parquet) with curated prefixes for analytics",
+      "Built retry logic, guardrails, and prompt templates for consistent GenAI responses"
+    ],
+    "technicalSkills": [
+      "Python", "Pandas", "SQL",
+      "AWS S3", "AWS Glue Python Shell",
+      "Lambda", "Step Functions", "CloudWatch",
+      "Amazon Textract (OCR)", "Amazon Bedrock (GenAI)",
+      "Athena", "Redshift", "CI/CD"
+    ],
+    "liveLink": "",
+    "githubLink": ""
+  },
+  {
+    "title": "Personalized Learning Pathways with Real-Time Feedback",
+    "description": "Developed and maintained a full data pipeline for a personalized learning platform. Extracted, cleaned, transformed, and centralized multi-source data into AWS Redshift using Airflow, Spark, and Python to deliver real-time learning insights and optimized learning experiences.",
+    "period": "February 2021 – February 2024",
+    "position": "Data Engineer",
+    "responsibilities": [
+      "Extracted data from multiple sources including user activity, feedback, and learning interactions",
+      "Built ETL pipelines using Airflow, custom scripts, and Python to centralize data",
+      "Stored processed data in AWS Redshift for scalable analytics and reporting",
+      "Implemented data cleaning and transformation for high-quality, accurate datasets",
+      "Used Pandas and Spark for heavy data processing tasks",
+      "Maintained unified data warehouse and automated jobs"
+    ],
+    "technicalSkills": [
+      "Python", "Pandas", "SQL",
+      "AWS", "Apache Airflow", "Redshift",
+      "Apache Spark"
+    ],
+    "liveLink": "",
+    "githubLink": ""
+  }
+]
+
 
   const certificates = [
     {
@@ -306,7 +459,7 @@ const CertificateCard = ({ title, imageUrl, link }) => (
               <span className="block">Data Engineer/ SWE</span>
             </h1>
             <p className="text-xl text-gray-600">
-            Data Engineer / Big Data / PySpark / ETL / SQL / Cloud (AWS & Azure) / Kafka / Airflow / Data Lakes / Django / FastAPI / Flask
+            Data Engineer / Big Data / PySpark / ETL / SQL / Cloud (AWS) / Kafka / Airflow / Data Lakes / Django / FastAPI / Flask
           </p>
 
             <div className="flex space-x-4">
@@ -385,8 +538,16 @@ const CertificateCard = ({ title, imageUrl, link }) => (
         <div className="max-w-5xl w-full text-center">
           <h2 className="text-3xl font-bold mb-12">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
-            {projects.map((project, index) => (
+            {/* {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
+            ))} */}
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                className={`${index === 2 ? "col-span-2" : ""}`}
+              >
+                <ProjectCard {...project} />
+              </div>
             ))}
           </div>
         </div>

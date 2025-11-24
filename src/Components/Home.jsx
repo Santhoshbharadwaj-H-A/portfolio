@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { Briefcase, GraduationCap, ChevronUp, Menu, X, Code, ExternalLink, Mail, Phone, Linkedin, Globe, Github } from 'lucide-react';
 import resume from "../Assets/resume.pdf";
 import Profile_Image from "../Assets/profile_photo.jpg";
-// import Profile1 from "../Assets/Profile1.jpg";
+import Profile1 from "../Assets/Profile1.jpg";
 import cp from "../Assets/C_programing.jpg";
 import algebra from "../Assets/college_algebra_with_python.JPG";
 import analysis from "../Assets/Data_analysis_with_python.JPG";
